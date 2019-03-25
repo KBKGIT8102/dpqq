@@ -28,12 +28,14 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder>
         this.context = context;
     }
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.house_item, viewGroup, false);
         return new ViewHolder(v);
+
     }
 
     @Override
@@ -76,5 +78,6 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder>
             image=(ImageView)itemView.findViewById(R.id.image);
             cv=itemView.findViewById(R.id.cv);
         }
+
     }
 }
