@@ -43,7 +43,6 @@ public class HouseFragment extends Fragment {
         int Id = (int)getArguments().getSerializable(ARG_HOUSE_ID);
         house= HouseLab.get(getActivity()).getHouse(Id);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
