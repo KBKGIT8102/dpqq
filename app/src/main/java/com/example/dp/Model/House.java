@@ -1,6 +1,8 @@
 package com.example.dp.Model;
 
-public class House {
+import java.io.Serializable;
+
+public class House implements Serializable {
     private String area;
     private String city_title;
     private String creation_date;
@@ -274,4 +276,5 @@ public class House {
     public void setUser_title(String user_title) {
         this.user_title = user_title;
     }
+
 }

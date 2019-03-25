@@ -16,9 +16,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView rv;
     private HouseAdapter adapter;
+    private RecyclerView rv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

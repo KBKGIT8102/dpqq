@@ -12,20 +12,23 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dp.Model.House;
+import com.example.dp.Model.HouseLab;
 import com.example.dp.R;
 import com.example.dp.ViewPagerActivity;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder>
 {
-    private List<House> houses;
+    private ArrayList<House> houses;
     private Context context;
 
-    public HouseAdapter(List<House> houses, Context context) {
+    public HouseAdapter(ArrayList<House> houses, Context context) {
         this.houses = houses;
         this.context = context;
+        HouseLab.get(context).AddHouses(houses);
     }
 
 
@@ -40,7 +43,7 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        House house = houses.get(i);
+        final House house = houses.get(i);
         viewHolder.title.setText(house.getTitle());
         viewHolder.district.setText(house.getDistrict_title());
         viewHolder.area.setText(house.getArea());
@@ -49,7 +52,7 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.ViewHolder>
         viewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, ViewPagerActivity.class);
+                Intent intent = ViewPagerActivity.newIntent(context,house.getId());
                 context.startActivity(intent);
             }
         });
